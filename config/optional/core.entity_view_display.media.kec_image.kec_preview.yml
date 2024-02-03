@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.kec_preview
+    - field.field.media.kec_image.kec_media_image
+    - image.style.kec_event_image_preview
+    - media.type.kec_image
+  module:
+    - image
+id: media.kec_image.kec_preview
+targetEntityType: media
+bundle: kec_image
+mode: kec_preview
+content:
+  kec_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: kec_event_image_preview
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

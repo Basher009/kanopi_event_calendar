@@ -1,0 +1,83 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.kec_event.kec_body
+    - field.field.node.kec_event.kec_event_address
+    - field.field.node.kec_event.kec_event_date
+    - field.field.node.kec_event.kec_event_image
+    - field.field.node.kec_event.kec_event_register
+    - field.field.node.kec_event.kec_event_related
+    - field.field.node.kec_event.kec_event_type
+    - node.type.kec_event
+  module:
+    - address
+    - date_recur
+    - link
+    - text
+    - user
+id: node.kec_event.default
+targetEntityType: node
+bundle: kec_event
+mode: default
+content:
+  kec_body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  kec_event_address:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  kec_event_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+      separator: '-'
+      show_next: '0'
+      occurrence_format_type: medium
+      show_rrule: 0
+      count_per_item: 0
+    third_party_settings: {  }
+    type: date_recur_default_formatter
+    region: content
+  kec_event_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  kec_event_register:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  kec_event_type:
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  kec_event_related: true
+  links: true
